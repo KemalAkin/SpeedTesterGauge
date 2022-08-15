@@ -20,15 +20,16 @@ ping_result = test.results.ping
 
 
 ## Creating Gauge Plot with Plotly
+This is a basic usage, see the [code](https://github.com/Kemalakin/SpeedTesterGauge/blob/main/SpeedTester.ipynb) for tweaks..
 ```python
 fig = go.Figure(go.Indicator(
     domain = {'x': [0, 1], 'y': [0, 1]},
     value = down_result/(1024*1024),
     mode = "gauge+number+delta",
-    title = {'text': "Download Speed (Mbps)", 'font':{'family':"serif", 'size':32}, 'align':"center"},
-    delta = {'reference': 50},  #I set the reference according to my ISP
-    gauge = {'axis': {'range': [None, 100],'tickcolor':'darkblue','tickfont':{'family':"sans-serif", 'size':20}, 'tickwidth':1},
-             'bar': {'color':"#4c5a58",'line':{'color':'black', 'width':1}},
+    title = {'text': "Download Speed (Mbps)"},
+    delta = {'reference': 50},  
+    gauge = {'axis': {'range': [None, 100]},
+             'bar': {'color':"#4c5a58"},
              'borderwidth': 2,
              'bordercolor': "gray",
              'shape':'angular', 
