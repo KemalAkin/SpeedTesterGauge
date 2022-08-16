@@ -4,6 +4,7 @@
 ```python
 !pip install speedtest-cli
 
+import speedtest
 # Create object
 test = speedtest.Speedtest()
 
